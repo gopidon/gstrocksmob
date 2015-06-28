@@ -10,7 +10,9 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
+      {{#if isInRole 'admin'}}
         <button class="button button-clear" data-ion-modal="newsEdit" data-id="{{npost._id}}">Edit</button>
+      {{/if}}
   {{/contentFor}}
 
   {{#ionView}}
@@ -25,8 +27,9 @@
                 <h2 class="product-title">
                     {{title}}
                 </h2>
+                <br>
                 <p>
-                    {{{content}}}
+                    {{breaklines content}}
                 </p>
               {{#with author}}
                   <p>
