@@ -4,6 +4,11 @@
     {{>ionNavBackButton class="button-positive" text=false}}
   {{/contentFor}}
 
+  {{#contentFor "headerButtonRight"}}
+        {{#if isInRole 'admin'}}
+            <button class="button button-clear" data-ion-modal="discussEdit" data-id="{{dpost._id}}">Edit</button>
+        {{/if}}
+  {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
       <h1 class="title">Details</h1>
@@ -16,24 +21,24 @@
 
 
             {{#with dpost}}
-            {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
-                {{> voteDPostsButton}}
-                <h2 class="product-title">
-                    {{title}}
-                </h2>
-                <br>
-                <p>
-                    {{breaklines content}}
-                </p>
-              {{#with author}}
-                  <p>
-                      <small>via <a href="{{pathFor 'userView'}}" class="dark">{{profile.name}}</a></small>
-                  </p>
-              {{/with}}
-                <p>
-                    on {{datePosted}}
-                </p>
-            {{/ionItem}}
+                {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
+                    {{> voteDPostsButton}}
+                    <h2 class="product-title">
+                        {{title}}
+                    </h2>
+                    <br>
+                    <p>
+                        {{breaklines content}}
+                    </p>
+                  {{#with author}}
+                      <p>
+                          <small>via <a href="{{pathFor 'userView'}}" class="dark">{{profile.name}}</a></small>
+                      </p>
+                  {{/with}}
+                    <p>
+                        on {{datePosted}}
+                    </p>
+                {{/ionItem}}
             {{/with}}
 
             <div class="padding product-detail-comments">
