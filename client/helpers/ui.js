@@ -20,6 +20,10 @@ UI.registerHelper('pluralize', function(n, thing) { // fairly stupid pluralizer
     }
 });
 
+UI.registerHelper('ownsDocument', function(doc, user) {
+    return doc && doc.userId === user._id;
+});
+
 UI.registerHelper('breaklines', function(text) {
     text = text.replace(/(\r\n|\n|\r)/gm, '<br/>');
     return new Spacebars.SafeString(text);

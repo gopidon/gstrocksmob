@@ -5,7 +5,7 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-        {{#if isInRole 'admin'}}
+        {{#if ownsDocument dpost currentUser}}
             <button class="button button-clear" data-ion-modal="discussEdit" data-id="{{dpost._id}}">Edit</button>
         {{/if}}
   {{/contentFor}}
