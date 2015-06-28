@@ -1,0 +1,26 @@
+<template name="home">
+    {{#contentFor "headerButtonLeft"}}
+        <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+            {{> ionIcon icon='ios-search'}}
+        </button>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+        {{#if isInRole 'admin'}}
+            <button class="button button-clear pull-right button-positive" data-ion-modal="newsCreate">
+                {{> ionIcon icon='ios-plus-empty'}}
+            </button>
+        {{/if}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Home</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{> newsList}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
+

@@ -1,0 +1,10 @@
+<template name="newsList">
+    {{#ionList}}
+        {{#each nposts}}
+            {{> newsItem}}
+        {{/each}}
+    {{/ionList}}
+    {{#if showMore}}
+        <button class="button button-full button-positive give-me-more">More News</button>
+    {{/if}}
+</template>

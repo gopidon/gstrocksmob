@@ -1,0 +1,39 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+iron:router
+fourseven:scss@2.0.0
+meteoric:ionic-sass
+meteoric:ionicons-sass
+meteoric:ionic
+alanning:roles
+sacha:spin
+audit-argument-checks
+accounts-facebook
+service-configuration
+accounts-password
+accounts-google
+momentjs:moment
+meteorhacks:npm
+spiderable
+cfs:standard-packages
+cfs:gridfs
+cfs:ui
+fastclick
+reactive-var
+
+
+npm-container
+natestrauser:font-awesome
+bengott:avatar
+aldeed:collection2
+matb33:collection-hooks
+dburles:collection-helpers
+mrt:underscore-string-latest
+aldeed:autoform
+meteoric:autoform-ionic
+reywood:publish-composite

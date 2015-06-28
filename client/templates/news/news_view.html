@@ -1,0 +1,60 @@
+<template name="newsView">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+
+  {{#contentFor "headerTitle"}}
+      <h1 class="title">Details</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+        <div class="product-detail">
+
+
+            {{#with npost}}
+            {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
+                {{> voteNPostsButton}}
+                <h2 class="product-title">
+                    {{title}}
+                </h2>
+                <p>
+                  {{content}}
+                </p>
+              {{#with author}}
+                  <p>
+                      <small>via <a href="{{pathFor 'userView'}}" class="dark">{{profile.name}}</a></small>
+                  </p>
+              {{/with}}
+                <p>
+                    on {{datePosted}}
+                </p>
+            {{/ionItem}}
+            {{/with}}
+
+            <div class="padding product-detail-comments">
+                <h5>Comments</h5>
+                {{#with npost}}
+                    <button class="button button-positive button-small button-circle button-new-comment" data-action="new-comment">
+                        {{>ionIcon icon="plus"}}
+                    </button>
+                {{/with}}
+            </div>
+
+            <div class="list">
+                {{#each ncomments}}
+                    {{> ncommentItem}}
+                {{/each}}
+            </div>
+
+
+
+
+        </div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

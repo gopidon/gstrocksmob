@@ -1,0 +1,22 @@
+<template name="newsItem">
+
+            {{#ionItem path="newsView" iconLeft=true iconRight=true}}
+                {{> voteNPostsButton}}
+                <h2>{{title}}</h2>
+                {{#with author}}
+                    <p>
+                        <small>via <a href="{{pathFor 'userView'}}" class="dark">{{profile.name}}</a></small>
+                    </p>
+                {{/with}}
+                <p>
+                    on {{datePosted}}
+                </p>
+                <span class="comments-count">
+                    {{numberOfComments}}
+                    {{> ionIcon icon="ios-chatbubble" }}
+                </span>
+
+            {{/ionItem}}
+
+
+</template>

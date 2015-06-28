@@ -1,0 +1,38 @@
+<template name="userView">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+      <h1 class="title">Profile</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      {{#with user}}
+        {{> profileView}}
+        {{#ionList}}
+
+            <div class="item item-divider">
+                  News
+            </div>
+
+            {{#each votedNPosts}}
+              {{> newsItem}}
+            {{/each}}
+
+            <div class="item item-divider">
+                  Discussions
+            </div>
+
+            {{#each votedDPosts}}
+              {{> discussItem}}
+            {{/each}}
+
+        {{/ionList}}
+      {{/with}}
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

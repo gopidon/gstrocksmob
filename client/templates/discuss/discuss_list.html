@@ -1,0 +1,30 @@
+<template name="discussList">
+    {{#contentFor "headerButtonLeft"}}
+        <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+            {{> ionIcon icon='ios-search'}}
+        </button>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+        <button id="discussCreateBtn" class="button button-clear pull-right button-positive" data-ion-modal="discussCreate">
+            {{> ionIcon icon='ios-plus-empty'}}
+        </button>
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Discussion Forum</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{#ionList}}
+                {{#each dposts}}
+                    {{> discussItem}}
+                {{/each}}
+            {{/ionList}}
+            {{#if showMore}}
+                <button class="button button-full button-positive give-me-more">More Discussions</button>
+            {{/if}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
