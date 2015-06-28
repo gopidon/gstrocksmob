@@ -1,10 +1,10 @@
-<template name="newsCreate">
+<template name="newsEdit">
     {{#ionModal customTemplate=true}}
-        {{# autoForm collection="NPosts" id="nposts-create-form" type="insert"}}
+        {{#autoForm collection="NPosts" doc=npost id="nposts-edit-form" type="update"}}
             <div class="bar bar-header bar-stable">
                 <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
-                <h2 class="title">Add News</h2>
-                <button type="submit" class="button button-positive button-clear">Post</button>
+                <h2 class="title">Edit News</h2>
+                <button type="submit" class="button button-positive button-clear">Save</button>
             </div>
             <div class="content has-header overflow-scroll">
                 {{> afQuickField name="url" type="url"}}
