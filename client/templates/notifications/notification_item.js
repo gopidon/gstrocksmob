@@ -23,7 +23,9 @@ Template.notificationItem.helpers({
 });
 
 Template.notificationItem.events({
-    'click a': function() {
-        Notifications.update(this._id, {$set: {read: true}});
+    'click a': function(evt, template) {
+        evt.preventDefault();
+        Notifications.update(template.data._id, {$set: {read: true}});
+        Router.go(evt.target.href);
     }
 });
