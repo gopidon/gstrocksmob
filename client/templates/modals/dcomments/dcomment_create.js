@@ -7,6 +7,7 @@ AutoForm.hooks({
             var insertDoc = (AutoForm.getFormValues('dcomment-create-form')).insertDoc;
             if(insertDoc){
                 DPosts.update({_id: insertDoc.dpostId}, {$inc: {numberOfComments: 1}});
+                createCommentNotification(result, "DPost"); //Pass DComment Id
             }
             IonModal.close();
         }

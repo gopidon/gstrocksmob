@@ -1,0 +1,14 @@
+<template name="notificationItem">
+    {{#ionItem path=postPath iconLeft=true iconRight=true}}
+            {{#if isNPost}}
+                {{#with commentAuthor}}
+                    {{> avatar user=this size="small" shape="circle"}} {{profile.name}} commented on your news post
+                {{/with}}
+            {{else}}
+                {{#with commentAuthor}}
+                    {{> avatar user=this size="small" shape="circle"}} {{profile.name}} commented on your discussion
+                {{/with}}
+            {{/if}}
+
+    {{/ionItem}}
+</template>

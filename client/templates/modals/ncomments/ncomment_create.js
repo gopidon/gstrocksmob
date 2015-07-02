@@ -7,7 +7,7 @@ AutoForm.hooks({
             var insertDoc = (AutoForm.getFormValues('ncomment-create-form')).insertDoc;
             if(insertDoc){
                 NPosts.update({_id: insertDoc.npostId}, {$inc: {numberOfComments: 1}});
-                createCommentNotification(result, "NPost"); //Pass CommentId
+                createCommentNotification(result, "NPost"); //Pass NComment Id
             }
             IonModal.close();
         }

@@ -30,21 +30,3 @@ Template.notifications.helpers({
         return Notifications.find({userId: Meteor.userId(), read: false}).count();
     }
 });
-
-Template.notificationItem.helpers({
-    notificationPostPath: function() {
-        if(this.type == "NPost"){
-            return Router.routes.newsView.path({_id: this.postId});
-        }
-        else if (this.type == "DPost"){
-            return Router.routes.discussView.path({_id: this.postId});
-        }
-    }
-
-});
-
-Template.notificationItem.events({
-    'click a': function() {
-        Notifications.update(this._id, {$set: {read: true}});
-    }
-});
