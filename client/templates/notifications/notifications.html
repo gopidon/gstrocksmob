@@ -1,0 +1,29 @@
+<template name="notifications">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Notifications</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            <h3 class="main">Notifications</h3>
+            {{#if notificationCount}}
+                <ul class="">
+                    {{#each notifications}}
+                        {{> notificationItem}}
+                    {{/each}}
+                </ul>
+            {{else}}
+                You have no notifications!
+            {{/if}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
+<template name="notificationItem">
+    <li>
+        <a href="{{notificationPostPath}}">
+            {{#with commentAuthor}}
+                <strong>{{profile.name}}</strong> commented on your post
+            {{/with}}
+        </a>
+    </li>
+</template>

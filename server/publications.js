@@ -122,3 +122,32 @@ Meteor.publishComposite('user', function(_id) {
 });
 
 /* End Users */
+
+/* Start Notifications */
+
+// Notifications Related
+
+Meteor.publishComposite('notifications', function(_id) {
+    if(_id){
+        check(_id, String);
+    }
+    else{
+        check(_id, null);
+    }
+    return {
+        find: function() {
+            return Notifications.find({userId: _id, read: false});
+        },
+        children: [ //Just a publish thingee. Publishing related users other than the current user.
+            {
+                find: function(notification) {
+                    if(notification.commentUserId){
+                        return Meteor.users.find({_id: notification.commentUserId});
+                    }
+                }
+            }
+        ]
+    };
+});
+
+/* End Notifications */
