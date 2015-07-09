@@ -18,7 +18,6 @@ if(Meteor.isServer){
         postsSearch: function(queryString, limit){
             check(queryString, String);
             check(limit, Number);
-
             var future = new Future();
             esClient.search({
                 index: 'gst',
