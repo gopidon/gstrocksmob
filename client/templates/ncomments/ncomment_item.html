@@ -1,10 +1,12 @@
 <template name="ncommentItem">
     <div class="item item-text-wrap comment-item">
         {{#with author}}
-            <a href="{{pathFor 'userView'}}" class="comment-item-author">
-                {{> avatar user=this size="small" shape="circle"}}
-                {{profile.name}}
-            </a>
+            <p>
+                <a href="{{pathFor 'userView'}}" class="comment-item-author">
+                    {{> avatar user=this size="small" shape="circle"}}
+                    {{profile.name}}
+                </a>
+            </p>
         {{/with}}
         <p>
             on {{datePosted}}
